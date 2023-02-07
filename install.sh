@@ -359,6 +359,7 @@ function modify_nginx_ws(){
 function modify_nginx_other() {
   modify_nginx_ws
   sed -i "/proxy_pass/c \\\tproxy_pass http://127.0.0.1:${inbound_port};" ${nginx_conf}
+  sed -i 's/X25519://' ${nginx_conf}
 }
 
 
